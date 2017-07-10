@@ -2,27 +2,60 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+Semantic HTML refers to using HTML elements to describe the content that will be placed inside.  For example <header> <footer> <article> etc.  This makes it easier to read and understand the content.
+
 2. What is the box model?
+
+The box model is what wraps every element in CSS.  All content is first wrapped by padding which is the clear area around the content which is used to generate space around the content.  Next is the border that wraps the content and padding and can be defined as any width, color, or type.  Last is the margin that is the clear area on the outside of the border and is used typically to add space around the element.
 
 3. What is the difference between IDs and Classes?
 
+ID's and classes are both used to style the html.  The main difference between them are ID's should only be used one time to style your HTML where classes can be used as many times as needed to style your HTML.
+
 4. What does the z-index do?
+
+Z-Index is used to specify the order that your elements display.  Can be used if an element is displaying behind another element and needs to be brought in front.  The higher the number, the further to front of the stack.
 
 5. Summarize what the keyword 'this' is used for?
 
+They keyword 'this' is used to refer back to an object or function in context.  For example:
+
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+When using the constructor function to create a new object, this will refer to the new object.
+
 6. What is a callback?
+
+A callback is a function that is passed into another function as a parameter and can be called or returned from within the function.
 
 7. What is a closure?
 
+A closure is a function that has access to the outer functions variables. This gives the developer the ability to control the data inside the functions and to persist the data.
+
 8. How does prototype work?
+
+All objects in javascript point to another object called a prototype and inherit their properties and methods.  There are already predifined methods on the prototype object such as .reverse() or .split() and additional methods can be created.
 
 9. What is MVC?
 
+MVC stand for model, view, controller and is a structure used to organize the front end of your application. Model relates to the storage of data. View is the interface to view the data and uses the DOM to render the information, and Controller takes the inputs and then communicates the changes to the data and updates the view..
+
 10. What is the component lifecycle?
+
+The component lifecycle are methods that can override your code to run at particular times during the process such as componenetDidMount() invokes just after a component is mounted.
 
 11. What is REST?
 
+REST stands for representational state transfer and is a standardized practice of communicating with API's or other computer systems on the internet.  REST uses the HTTP protocol to GET(receive), POST(create), PUT(update), and DELETE(destroy) data from an API and typically receives the data in the JSON format.
+
 12. Name three ways of getting data from the URL using express
+
+Using req, you are able to get data from the URL using req.body, req.params, or req.query.  Req.body will receive any data that sent on the body of the request, where req.params pulls information from the path portion of the URL, and req.query can pull information from the query portion of the URL(after the ?).
 
 create table users (
 id serial,
@@ -34,8 +67,20 @@ email varchar(255)
 
 -Get all users:
 
+SELECT * from users;
+
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+
+INSERT INTO users (name, email)
+VALUES ('Taylor', 'fake@fake.com');
 
 -Update the newly created user's name to 'Bobby Boy':
 
+UPDATE users
+SET name = 'Bobby Boy'
+WHERE name = 'Taylor';
+
 -Delete the newly updated user:
+
+DELETE FROM users
+WHERE name = 'Bobby Boy';
